@@ -69,7 +69,7 @@ void matrix_mult(matrix_t* a, matrix_t* b, matrix_t* r)
     long i, j, k, y;
 
     for (i = 0; i < r->rows; ++i) {
-        for (j = 0; j < r->cols; ++i) {
+        for (j = 0; j < r->cols; ++j) {
             y = 0;
             for (k = 0; k < a->cols; ++k) {
                 y += a->data[i * a->cols + k] * b->data[k * b->cols + j];
@@ -109,12 +109,12 @@ int main(int argc, char* argv[])
         return EXIT_FAILURE;
     }
 
-    if (!read_matrix(argv[2], &a)) {
+    if (!read_matrix(argv[1], &a)) {
         fputs("could not read input matrix A", stderr);
         return EXIT_FAILURE;
     }
 
-    if (!read_matrix(argv[3], &b)) {
+    if (!read_matrix(argv[2], &b)) {
         fputs("could not read input matrix B", stderr);
         return EXIT_FAILURE;
     }
