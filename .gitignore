@@ -1,5 +1,4 @@
 *.tar.gz
-<<<<<<< HEAD
 *.csv
 *benchmark_*.txt
 *benchmark_*.csv
@@ -9,10 +8,8 @@
 *.DS_Store
 blatt2/mmul
 blatt2/mmul.dSYM/
-=======
 bin/
 CMakeFiles/
-
 CMakeCache.txt
 *.cmake
->>>>>>> cfbceb3735acb8561ff6bb05d0ea8cdd1840cc20
+*.o
