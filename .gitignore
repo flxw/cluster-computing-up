@@ -1,1 +1,10 @@
 *.tar.gz
+*.csv
+*benchmark_*.txt
+*benchmark_*.csv
+*build
+*.vscode
+*.ipynb_checkpoints
+*.DS_Store
+blatt2/mmul
+blatt2/mmul.dSYM/
