@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named affine_montecarlo_pi
+
+# Build rule for target.
+affine_montecarlo_pi: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 affine_montecarlo_pi
+.PHONY : affine_montecarlo_pi
+
+# fast build rule for target.
+affine_montecarlo_pi/fast:
+	$(MAKE) -f CMakeFiles/affine_montecarlo_pi.dir/build.make CMakeFiles/affine_montecarlo_pi.dir/build
+.PHONY : affine_montecarlo_pi/fast
+
+#=============================================================================
 # Target rules for targets named montecarlo_pi
 
 # Build rule for target.
@@ -122,6 +135,33 @@ montecarlo_pi: cmake_check_build_system
 montecarlo_pi/fast:
 	$(MAKE) -f CMakeFiles/montecarlo_pi.dir/build.make CMakeFiles/montecarlo_pi.dir/build
 .PHONY : montecarlo_pi/fast
+
+affine_montecarlo_pi.o: affine_montecarlo_pi.c.o
+
+.PHONY : affine_montecarlo_pi.o
+
+# target to build an object file
+affine_montecarlo_pi.c.o:
+	$(MAKE) -f CMakeFiles/affine_montecarlo_pi.dir/build.make CMakeFiles/affine_montecarlo_pi.dir/affine_montecarlo_pi.c.o
+.PHONY : affine_montecarlo_pi.c.o
+
+affine_montecarlo_pi.i: affine_montecarlo_pi.c.i
+
+.PHONY : affine_montecarlo_pi.i
+
+# target to preprocess a source file
+affine_montecarlo_pi.c.i:
+	$(MAKE) -f CMakeFiles/affine_montecarlo_pi.dir/build.make CMakeFiles/affine_montecarlo_pi.dir/affine_montecarlo_pi.c.i
+.PHONY : affine_montecarlo_pi.c.i
+
+affine_montecarlo_pi.s: affine_montecarlo_pi.c.s
+
+.PHONY : affine_montecarlo_pi.s
+
+# target to generate assembly for a file
+affine_montecarlo_pi.c.s:
+	$(MAKE) -f CMakeFiles/affine_montecarlo_pi.dir/build.make CMakeFiles/affine_montecarlo_pi.dir/affine_montecarlo_pi.c.s
+.PHONY : affine_montecarlo_pi.c.s
 
 montecarlo_pi.o: montecarlo_pi.c.o
 
@@ -157,8 +197,12 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
+	@echo "... affine_montecarlo_pi"
 	@echo "... edit_cache"
 	@echo "... montecarlo_pi"
+	@echo "... affine_montecarlo_pi.o"
+	@echo "... affine_montecarlo_pi.i"
+	@echo "... affine_montecarlo_pi.s"
 	@echo "... montecarlo_pi.o"
 	@echo "... montecarlo_pi.i"
 	@echo "... montecarlo_pi.s"
