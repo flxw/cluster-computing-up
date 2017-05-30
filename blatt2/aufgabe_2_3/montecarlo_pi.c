@@ -3,6 +3,7 @@
 #include <pthread.h>
 #include <math.h>
 
+
 #include "random.h"
 
 typedef struct _thread_data_t {
@@ -19,9 +20,10 @@ void *thr_func(void *arg) {
 
   for (;data->samples != 0; --data->samples) {
     double x = pr_random_f(1), y = pr_random_f(1);
-    double r = sqrt(x*x + y*y);
 
-    if (r < 1) {
+    double r2 = x*x + y*y;
+
+    if (r2 < 1) {
       data->n_inside++;
     } else {
       data->n_outside++;
@@ -77,13 +79,14 @@ int main(int argc, char **argv) {
     n_inside_total  += thr_data[i].n_inside;
   }
 
-  double approx_pi = (double)n_inside_total/(double)n_outside_total;
-  double error_abs = abs(M_PI - approx_pi);
+  double approx_pi = (4.0*(double)n_inside_total)/(double)(n_outside_total+n_inside_total);
+  double relative_error = (approx_pi - M_PI) / M_PI;
 
-  printf("Inside circle:  %i\n", n_inside_total);
-  printf("Outside circle: %i\n", n_outside_total);
-  printf("Pi approximation: %f\n", approx_pi);
-  printf("Relative error: %f\n", error_abs / (double)M_PI);
+  printf("%i\t%i\t%f\t%f", n_inside_total, n_outside_total, approx_pi, relative_error);
+  // printf("Inside circle:  %i\n", n_inside_total);
+  // printf("Outside circle: %i\n", n_outside_total);
+  // printf("Pi approximation: %f\n", approx_pi);
+  // printf("Relative error: %f\n", relative_error);
 
   return EXIT_SUCCESS;
 }
