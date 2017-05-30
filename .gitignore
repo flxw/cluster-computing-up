@@ -1,1 +1,6 @@
 *.tar.gz
+bin/
+CMakeFiles/
+
+CMakeCache.txt
+*.cmake
