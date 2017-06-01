@@ -18,10 +18,10 @@ def create_csv(benchmark_file_name, output_file_name, keep_duplicate_results, so
         t = datetime.strptime(lines[2].split("\t")[1], "%Mm%S.%fs")
         delta = timedelta(hours=t.hour, minutes=t.minute, seconds=t.second, microseconds=t.microsecond)
         
-        df_lines = df_lines + [run_args + run_results + [delta.total_seconds()]]
+        df_lines = df_lines + [pd.to_numeric(run_args + run_results + [delta.total_seconds()])]
         
     df = pd.DataFrame(
-        data=df_lines,
+        data = df_lines,
         columns=[
             "num_samples",
             "num_threads",
