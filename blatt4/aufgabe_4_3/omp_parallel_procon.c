@@ -94,7 +94,7 @@ void produce(queue_t *queue)
     }
 
     printf("%d producer tasks created\n", NUM_WORK_ITEMS);
-    #pragma omp taskwait
+#pragma omp taskwait
     printf("%d items produced\n", NUM_WORK_ITEMS);
 }
 
@@ -118,7 +118,7 @@ void consume(queue_t *queue)
     }
 
     printf("%d consumer tasks created\n", NUM_WORK_ITEMS);
-    #pragma omp taskwait
+#pragma omp taskwait
     printf("%d items consumed\n", NUM_WORK_ITEMS);
 }
 
