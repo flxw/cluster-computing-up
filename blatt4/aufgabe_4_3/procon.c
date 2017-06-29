@@ -67,7 +67,7 @@ void produce(queue_t* queue)
 		}
 	}
 
-	printf("%d items produced\n", NUM_WORK_ITEMS);
+	// printf("%d items produced\n", NUM_WORK_ITEMS);
 }
 
 void consume(queue_t* queue)
@@ -77,7 +77,7 @@ void consume(queue_t* queue)
 		if (item != NULL) {
 			queue->num_consumed++;
 
-			printf("item %d consumed\n", item->data);
+			// printf("item %d consumed\n", item->data);
 			free(item);
 
 			/* simulate consuming/processing an element takes some time */
@@ -85,7 +85,7 @@ void consume(queue_t* queue)
 		}
 	}
 
-	printf("%d items consumed\n", NUM_WORK_ITEMS);
+	// printf("%d items consumed\n", NUM_WORK_ITEMS);
 }
 
 int main(int argc, char** argv)
