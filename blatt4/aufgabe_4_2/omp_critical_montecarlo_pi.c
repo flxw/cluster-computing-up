@@ -1,9 +1,8 @@
 int i, hits, x, y;
 hits = 0;
 result = 0;
-#pragma omp parallel private(hits)
+#pragma omp parallel firstprivate(hits)
 {
-    hits = 0;
     #pragma omp for
     for (i = 0; i < num_samples; i++) {
         x = random();
@@ -13,6 +12,6 @@ result = 0;
             hits++;
         }
     }
-    #pragma omp critical;
+    #pragma omp atomic
     result += hits;
 }
