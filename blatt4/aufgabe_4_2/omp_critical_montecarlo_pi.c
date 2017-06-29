@@ -12,6 +12,8 @@ result = 0;
             hits++;
         }
     }
-    #pragma omp atomic
-    result += hits;
+    #pragma omp critical
+    {
+        result += hits;
+    }
 }
