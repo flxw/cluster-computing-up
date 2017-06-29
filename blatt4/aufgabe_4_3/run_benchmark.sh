@@ -12,10 +12,13 @@ ssh "$NODE" 'bash -s' << 'ENDSSH'
   
   echo procon
   /usr/bin/time -p ./procon
+  sleep 5
   echo omp_sec_procon
   /usr/bin/time -p ./omp_sec_procon
+  sleep 5
   echo omp_parallel_procon
   /usr/bin/time -p ./omp_parallel_procon
+  sleep 5
 
 ENDSSH
 done
