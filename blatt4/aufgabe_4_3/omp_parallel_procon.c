@@ -93,9 +93,9 @@ void produce(queue_t *queue)
         queue->num_produced++;
     }
 
-    printf("%d producer tasks created\n", NUM_WORK_ITEMS);
+    // printf("%d producer tasks created\n", NUM_WORK_ITEMS);
 #pragma omp taskwait
-    printf("%d items produced\n", NUM_WORK_ITEMS);
+    // printf("%d items produced\n", NUM_WORK_ITEMS);
 }
 
 void consume(queue_t *queue)
@@ -107,7 +107,7 @@ void consume(queue_t *queue)
             queue_item_t *item = queue_remove(queue);
             if (item != NULL)
             {
-                printf("item %d consumed\n", item->data);
+                // printf("item %d consumed\n", item->data);
                 free(item);
 
                 /* simulate consuming/processing an element takes some time */
@@ -117,9 +117,9 @@ void consume(queue_t *queue)
         queue->num_consumed++;
     }
 
-    printf("%d consumer tasks created\n", NUM_WORK_ITEMS);
+    // printf("%d consumer tasks created\n", NUM_WORK_ITEMS);
 #pragma omp taskwait
-    printf("%d items consumed\n", NUM_WORK_ITEMS);
+    // printf("%d items consumed\n", NUM_WORK_ITEMS);
 }
 
 int main(int argc, char **argv)
