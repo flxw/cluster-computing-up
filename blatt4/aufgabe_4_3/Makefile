@@ -8,5 +8,3 @@ all: $(TARGETS)
 clean:
 	rm -f $(TARGETS)
 
-bench: $(TARGETS)
-	for TARGET in $^; do /usr/bin/time -p ./$$TARGET; done
