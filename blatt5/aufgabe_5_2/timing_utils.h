@@ -9,3 +9,4 @@ void ts_diff(struct timespec *start, struct timespec *stop, struct timespec *res
 long ts2ms(struct timespec *ts);
 
 #endif
+
