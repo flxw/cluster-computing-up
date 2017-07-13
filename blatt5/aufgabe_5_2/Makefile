@@ -5,7 +5,7 @@ all: montecarlo_pi omp_montecarlo_pi
 montecarlo_pi: montecarlo_pi.c timing_utils.c
 	$(CC) -o $@ $^ $(LDFLAGS) -lpthread
 
-omp_montecarlo_pi: affine_montecarlo_pi.c timing_utils.c
+omp_montecarlo_pi: omp_montecarlo_pi.c timing_utils.c
 	$(CC) -o $@ $^ $(LDFLAGS) -fopenmp
 
 .PHONY: clean

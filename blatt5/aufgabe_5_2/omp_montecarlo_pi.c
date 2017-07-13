@@ -35,7 +35,8 @@ int main(int argc, char **argv) {
     unsigned int private_chunk_size = rest < chunk_size ? rest : chunk_size;
 
     double x, y, r;
-    for(unsigned int i = 0; i < private_chunk_size; i++) {
+    unsigned int i;
+    for(i = 0; i < private_chunk_size; i++) {
         x = pr_random_f_local(1.0, &rand_state);
         y = pr_random_f_local(1.0, &rand_state);
         r = x*x + y*y;
@@ -45,14 +46,13 @@ int main(int argc, char **argv) {
 
   double approx_pi = ((double)n_inside/(double)samples)*4.0;
   double relative_error = (approx_pi - M_PI) / M_PI;
-  printf("%i\t%i\t%f\t%f", n_inside, samples-n_inside, approx_pi, relative_error);
 
   struct timespec stop;
   clock_gettime(CLOCK_MONOTONIC, &stop);
 
   struct timespec elapsed;
   ts_diff(&start, &stop, &elapsed);
-  printf("\nCalculation took %i milliseconds.", ts2ms(&elapsed));
+  printf("Calculation took %i milliseconds\n", ts2ms(&elapsed));
 
   return EXIT_SUCCESS;
 }
