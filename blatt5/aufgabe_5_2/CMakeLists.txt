@@ -18,4 +18,4 @@ if (OPENMP_FOUND)
 endif()
 
 add_executable(omp_montecarlo_pi omp_montecarlo_pi.c timing_utils.c)
-target_link_libraries(omp_montecarlo_pi)
+target_link_libraries(omp_montecarlo_pi m)
