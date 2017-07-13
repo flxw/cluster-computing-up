@@ -12,6 +12,6 @@ echo "Running the whole thing on $COMPUTENODE"
 ssh "$COMPUTENODE" 'bash -s' << 'ENDSSH'
 cd ~/cluster-computing-up/blatt5/aufgabe_5_3
 for EXE in "montecarlo_pi" "omp_montecarlo_pi"; do
-	./benchmark.sh "./$EXE" 10000000000 16 benchmark_results_$EXE.txt
+	./benchmark.sh "./$EXE" 10000000 benchmark_results_$EXE.txt
 done
 ENDSSH
