@@ -88,19 +88,12 @@ int main(int argc, char **argv) {
   double approx_pi = (4.0*(double)n_inside_total)/(double)(n_outside_total+n_inside_total);
   double relative_error = (approx_pi - M_PI) / M_PI;
 
-  printf("%i\t%i\t%f\t%f", n_inside_total, n_outside_total, approx_pi, relative_error);
-  // printf("Inside circle:  %i\n", n_inside_total);
-  // printf("Outside circle: %i\n", n_outside_total);
-  // printf("Pi approximation: %f\n", approx_pi);
-  // printf("Relative error: %f\n", relative_error);
-
-
   struct timespec stop;
   clock_gettime(CLOCK_MONOTONIC, &stop);
 
   struct timespec elapsed;
   ts_diff(&start, &stop, &elapsed);
-  printf("\nCalculation took %i milliseconds.", ts2ms(&elapsed));
+  printf("Calculation took %i milliseconds\n", ts2ms(&elapsed));
 
   return EXIT_SUCCESS;
 }

@@ -20,3 +20,4 @@ long ts2ms(struct timespec *ts)
 {
     return ts->tv_sec * 1000 + (long)round((double)ts->tv_nsec / 1.0e6);
 }
+

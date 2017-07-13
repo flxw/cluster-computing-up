@@ -1,4 +1,4 @@
-LDFLAGS = -lm -lrt
+LDFLAGS = -lm -lrt -O2
 
 all: montecarlo_pi omp_montecarlo_pi
 
